@@ -1,0 +1,12 @@
+该书为DirectX12 3D龙书
+
+Chapter 1 ：Vector algebra.
+
+
+1.1 （vector）
+       向量有大小与方向，标量没有。
+       向量在物理中被称为矢量。
+       向量的大小称为模。
+       向量之间长度与方向相同，就说明这些向量相同。
+
+1.1.1 （vector and coordinate System）
