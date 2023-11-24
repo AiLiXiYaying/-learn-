@@ -1,6 +1,49 @@
 English:
 
-Word:
-algebra n.代数
+杂项:
+they 他们
+their 他们的
+we 我们
+our 我们的
+like 喜欢
+i 我
+you 你
+big 大
+small 小
+house 房子
+my 我的
+your 你的
 
+颜色：
+blue 蓝色
+black 黑色
+white 白色
+red 红色
+green 绿色
 
+数学术语：
+vector 向量
+algebra 代数
+
+动物：
+dog 狗
+cat 猫
+
+电子设备：
+phone 手机
+computer 电脑
+
+家人：
+mother母亲
+father 父亲
+
+职业：
+teacher 老师
+student 学生
+
+语言：
+english 英语
+chinese 中文
+
+载具：
+car 车
