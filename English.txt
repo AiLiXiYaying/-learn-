@@ -13,6 +13,11 @@ small 小
 house 房子
 my 我的
 your 你的
+he 他
+she 她
+is 是，很      he is or she is
+are 是      you are
+am 是         i am
 
 颜色：
 blue 蓝色
@@ -47,3 +52,29 @@ chinese 中文
 
 载具：
 car 车
+
+一年四季：
+winter 冬天
+summer 夏天
+spring 春天
+fall   秋天
+
+液体：
+water 水
+tea 茶
+coffee 咖啡
+juice 果汁
+
+数量：
+more 更多，多
+less 更少，少
+
+冷热：
+hot 热
+cold 冷
+
+长短：
+long 长
+short 短
+
+
