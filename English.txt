@@ -19,6 +19,17 @@ is 是，很      he is or she is
 are 是      you are
 am 是         i am
 
+时间：
+morning 早上                  good morning 早上好
+evening 晚上                  good evening 晚上好
+afternoon 下午              good afternoon 下午好
+
+性别：
+girl 女孩
+boy 男孩
+man 男人
+woman 女人
+
 颜色：
 blue 蓝色
 black 黑色
