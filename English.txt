@@ -18,6 +18,30 @@ she 她
 is 是，很      he is or she is
 are 是      you are
 am 是         i am
+this 这
+
+场景：
+road 路
+
+视觉：
+look 看
+
+确定与否定：
+yes 是 
+no 不
+not 不
+
+礼貌用语：
+excuse me 打扰一下
+hello 你好
+
+衣服：
+coat 外套
+
+饰品：
+bag 包
+wallet 钱包
+watch 手表
 
 时间：
 morning 早上                  good morning 早上好
@@ -48,6 +72,7 @@ cat 猫
 电子设备：
 phone 手机
 computer 电脑
+camera 摄像机
 
 家人：
 mother母亲
