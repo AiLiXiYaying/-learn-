@@ -1,0 +1,49 @@
+#include <iostream>
+
+
+class Log {
+private:
+	int m_LogLevel;
+public:
+	const int LogLevelError = 2;//可修改数值
+	const int LogLevelWarn = 4;
+	const int LogLevelInfo = 2;
+public:
+	void SetLevel(int level) {
+		m_LogLevel = level;
+	}
+
+	
+	void Warn(const char* message) {
+		if (m_LogLevel >= LogLevelWarn) {
+			std::cout << "[Warn]\t" << message << std::endl;
+		}
+	}
+	
+	void Error(const char* message) {
+		if (m_LogLevel >= LogLevelError) {
+			std::cout << "[Error]\t" << message << std::endl;
+		}
+	}
+	
+	void Info(const char* message) {
+		if (m_LogLevel >= LogLevelInfo) {
+			std::cout << "[INFO]\t" << message << std::endl;
+		}
+	}
+};
+
+int main() {
+
+
+
+	Log log;
+
+	log.SetLevel(log.LogLevelInfo);
+	log.Warn("Hello");
+	log.Error("Hello");
+	log.Info("Hello");
+	
+	std::cin.get();
+	return 0;
+}
