@@ -406,5 +406,137 @@ c++到可执行的过程：源文件.cpp --> 预处理器 --> 中间文件.i -->
 ******************************************************************************
 
 58.	处理多个返回值
-知识点：
+知识点：使用tuple解决.使用前，需加上头文件#include <tuple>
+
+代码示例：
+std::tuple<int, double, char> myFunction()
+{
+	return std::make_tuple(42, 3.14, 'A');
+}
+
+int main()
+{
+	/       可使用auto        \
+	std::tuple<int,double,char> result = myFunction();
+	std::cout << "Value 1: " << std::get<0>(result) << std::endl;
+	std::cout << "Value 2: " << std::get<1>(result) << std::endl;
+	std::cout << "Value 3: " << std::get<2>(result) << std::endl;
+	std::cout << std::get<0>(myFunction()) << std::endl;
+	return 0;
+}
+
+std::get<0>(result) 是用于从 std::tuple 中获取第一个元素的语法。
+******************************************************************************
+
+59.	模板
+知识点:只有被使用时才会创建实例，不被使用时，尽管函数内参数出错，也不会显示错误。
+
+创建模板：template <typename T>
+
+函数模板可以自动为形参选择合适的类型。
+类模板需要指定实际类型。
+
+类模板案例：
+1. 类模板（Class Templates）：
+定义： 类模板允许你定义一种通用的类，其中可以使用一个或多个类型参数。
+cpp
+Copy code
+template <typename T>
+class MyTemplate {
+public:
+    T data;
+    void setData(T value) {
+        data = value;
+    }
+};
+实例化： 在使用时，你需要指定实际类型，这样编译器才能为每个具体的类型生成对应的类。
+
+cpp
+Copy code
+MyTemplate<int> intObj;
+MyTemplate<double> doubleObj;
+示例用途： 类模板常用于容器类（如 std::vector<T>）、智能指针（如 std::shared_ptr<T>）、模板类的封装等情况。
+
+函数模板案例：
+
+类模板和函数模板都是 C++ 中的泛型编程工具，但它们有一些区别。
+
+1. 类模板（Class Templates）：
+定义： 类模板允许你定义一种通用的类，其中可以使用一个或多个类型参数。
+
+cpp
+Copy code
+template <typename T>
+class MyTemplate {
+public:
+    T data;
+    void setData(T value) {
+        data = value;
+    }
+};
+实例化： 在使用时，你需要指定实际类型，这样编译器才能为每个具体的类型生成对应的类。
+
+cpp
+Copy code
+MyTemplate<int> intObj;
+MyTemplate<double> doubleObj;
+实例化后，调用成员函数或成员变量无需再指定实际类型。
+示例用途： 类模板常用于容器类（如 std::vector<T>）、智能指针（如 std::shared_ptr<T>）、模板类的封装等情况。
+
+2. 函数模板（Function Templates）：
+定义： 函数模板允许你编写一个通用的函数，其中可以使用一个或多个类型参数。
+cpp
+Copy code
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+实例化： 函数模板在调用时自动推断模板参数类型，无需显式指定。
+
+cpp
+Copy code
+int result1 = add(3, 4);       // 实例化为 add<int>(3, 4)
+double result2 = add(2.5, 3.5); // 实例化为 add<double>(2.5, 3.5)
+示例用途： 函数模板常用于泛型算法、数学运算、容器算法等场景。
+******************************************************************************
+
+60.	宏
+知识点：#define abxc \
+int             其中\在宏定义中，等于回车。
+
+#define a int   
+基本格式，不过大多情况不这样使用，大多情况按以下方式使用：
+#if PR_DEBUG == 1
+#define LoG(x) std::cout << x << std::endl
+#elif defined(PR_RELEASE)
+#define LoG(x) std::cout << x << std::endl
+#endif
+
+语句：
+#if 0
+#endif
+作用为：当是0时，语句无效，为1时，语句生效。
+
+******************************************************************************
+
+61.	auto关键字
+知识点:自动适配类型。
+
+函数使用:auto fu() ->std::string
+{
+	return "cherno";
+}
+对象使用：auto a = fu();
+
+使用技巧：一般类型名字超级长，使用auto来方便。
+
+缺点：让代码变得难以理解。
+******************************************************************************
+
+62.	array(静态数组)（容器）
+知识点:与vector类似，不过array需要被指定大小,称为固定大小的容器(array).使用array之前需要＋头文件#include <array>
+
+代码示例:
+		/大小为42个元素\
+std::array<int,42>b;  	//不可更改数组大小
 ******************************************************************************
