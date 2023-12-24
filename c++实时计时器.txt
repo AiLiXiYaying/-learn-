@@ -1,0 +1,47 @@
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+#include <thread>
+
+static bool b = false;
+
+void func()
+{
+    while (!b)
+    {
+        // 获取当前系统时间
+        auto now = std::chrono::system_clock::now();
+
+        // 将时间转换为可读格式
+        std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+        std::tm current_time;
+        localtime_s(&current_time, &now_c);
+
+        // 格式化输出当前时间
+        char time_str[100];
+        std::strftime(time_str, sizeof(time_str), "%Y-%m-%d %H:%M:%S", &current_time);
+        std::cout << "Current Time: " << time_str << std::endl;
+
+        // 等待一秒钟
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        system("cls");
+
+    }
+}
+
+
+
+
+int main()
+{
+    std::thread a(func);
+
+    std::cin.get();
+    b = true;
+    a.join();
+
+    std::cout << "Bye Bye : My Dear \n";
+    std::cin.get();
+    return 0;
+}

@@ -1,0 +1,55 @@
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <iomanip>
+#include <thread>
+
+//A类，构造函数与析构函数位于程序最底端
+class A
+{
+public://该类的友元函数入口(1) 共一个友元函数入口**************************************************************************************************************
+    
+    friend std::ostream& operator<<(std::ostream& os, const A& obj);
+
+private://该类的私有入口(1) 共一个私有入口********************************************************************************************************************
+    
+    std::chrono::time_point<std::chrono::steady_clock> start_time_point, end_timer_point;
+    int x,b;
+
+public://该类的构造函数入口(1) 共一个构造入口******************************************************************************************************************
+
+    //构造函数
+    A() : start_time_point(std::chrono::high_resolution_clock::now()),x(10),b(50)//程序开始时间点
+    {
+        std::cout << "已成功 " << std::endl;
+    }
+
+
+public://该类的析构函数入口(1) 共一个析构入口******************************************************************************************************************
+    
+    //析构函数
+    ~A() 
+    {
+        end_timer_point = std::chrono::high_resolution_clock::now(); //程序结束时间点
+
+        std::chrono::duration<double> time = end_timer_point - start_time_point;
+        
+        std::cout << "已释放,该对象中的代码时长为 : "<<time.count()*1000.0 << "ms" << std::endl;
+    }
+};
+
+
+//程序入口**************************************************************************************************************************************************
+int main()
+{
+    A a;
+    
+    return 0;
+}
+
+//重载运算符<<     归属于A类 位于MyProjectone.cpp项目 所处第8行.
+std::ostream& operator<<(std::ostream& os, const A& obj)
+{
+    os << obj.x ;
+    return os;
+}
